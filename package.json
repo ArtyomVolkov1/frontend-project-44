@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/ArtyomVolkov1/frontend-project-44#readme",
   "dependencies": {
-    "node": "^19.3.0"
+    "node": "^19.3.0",
+    "readline-sync": "^1.4.10"
   }
 }
