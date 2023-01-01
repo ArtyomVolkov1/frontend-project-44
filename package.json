@@ -23,5 +23,10 @@
   "dependencies": {
     "node": "^19.3.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0"
   }
 }
