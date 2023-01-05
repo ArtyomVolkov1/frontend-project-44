@@ -1,5 +1,8 @@
 #!/usr/bin/env node
-import differentUserName from '../src/cli.js';
+import greetingUser from '../src/cli.js';
 
 console.log('Welcome to the Brain Games!');
-console.log(differentUserName());
+
+/* Функция вызова приветствия */
+
+greetingUser();
