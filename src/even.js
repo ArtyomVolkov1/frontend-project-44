@@ -1,40 +1,41 @@
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
+//  const greeting = () => {
+//   console.log('Welcome to the Brain Games!');
+//   const userName = readlineSync.question('May I have your name? ');
+//   return 'Hello, ' + userName + ' !';
+// }
 
+console.log('Welcome to the Brain Games!');
 const userName = readlineSync.question('May I have your name? ');
 
-const greeting = () => {
- return `Hello, ${userName} !`;
-}
-console.log(greeting());
-console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const greetingUser = () => {
+  const greeting = 'Hello, ' + userName + '!';
+  console.log(greeting);
+};
+
 const randomNumber = (min, max) => {
   return min + Math.round(Math.random() * (max - min));
-}
+};
 
 const checkParity = () => {
+  greetingUser();
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
-    const result = randomNumber(1, 50);
-    console.log('Question: ', result);
-    if (result % 2 === 0) {
-      const answer = readlineSync.question('Your answer: ', {
-        trueValue: ['yes'],
-      });
-      if (answer === true) {
-        console.log('Correct!');
-      } else return (`'${answer}' is wrong answer ;(. Correct answer was 'yes'.\nLet's try again, ${userName} !`);
+    const randomNum = randomNumber(1, 50);
+    console.log('Question: ', randomNum);
+    const answer = readlineSync.question('Your answer: ');
+    const checkEven = randomNum % 2 === 0 && answer === 'yes';
+    const checkNotEven = randomNum % 2 !== 0 && answer === 'no';
+    const errorChoice = answer === 'yes' ? 'no' : 'yes';
+    const defeat = `'${answer}' is wrong answer ;(. Correct answer was '${errorChoice}'.\nLet's try again, ${userName} !`;
+    if (checkEven || checkNotEven) {
+      console.log('Correct!');
+    } else {
+      console.log(defeat);
+      return;
     }
-    if (result % 2 !== 0) {
-      const answer = readlineSync.question('Your answer: ', {
-        trueValue: ['no'],
-      });
-      if (answer === true) {
-        console.log('Correct!');
-      } else return (`'${answer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName} !`);
-    }
-  } return `Congratulations, ${userName}!`;
-}
-console.log(checkParity());
-export default  checkParity;
-// export {userName, greeting, randomNumber, checkParity  };
+  } console.log('Congratulations, ' + userName + '!');
+};
+
+export default checkParity;
