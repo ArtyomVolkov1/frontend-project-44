@@ -19,8 +19,7 @@ const generateRound = () => {
   const oneNumber = oneRandomNumber(10);
   const twoNumber = twoRandomNumber(10);
   const randomMathOperation = mathOperations(operation);
-  const question =
-    String(oneNumber) + ` ${randomMathOperation} ` + String(twoNumber);
+  const question = String(oneNumber) + ` ${randomMathOperation} ` + String(twoNumber);
   switch (randomMathOperation) {
     case '+':
       calculMath = oneNumber + twoNumber;
