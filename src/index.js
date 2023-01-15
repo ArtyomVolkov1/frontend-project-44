@@ -16,7 +16,7 @@ const getPlayed = (ruleGame, generateRound) => {
   console.log(greeting);
   console.log(ruleGame);
 
-  for (let i = 0; i < 3; i  += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = generateRound();
     console.log('Question: ', question);
     const answerUser = readlineSync.question('Your answer: ');
