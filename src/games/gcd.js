@@ -3,10 +3,6 @@ import getPlayed from '../index.js';
 const randomNumber = (min, max) => {
   return min + Math.round(Math.random() * (max - min));
 };
-// const twoRandomNumber = (min, max) => {
-//     return min + Math.round(Math.random() * (max - min));
-//   };
-  
 
 const ruleGame = 'Find the greatest common divisor of given numbers.'
 
