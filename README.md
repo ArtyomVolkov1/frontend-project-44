@@ -9,4 +9,7 @@
   https://asciinema.org/a/fSSht3qOBGt2nsZHuAQsCWW7I
 
 3- Игра НОД (наибольший общий делитель)
-   https://asciinema.org/a/8HinOAFUx0MXcS4e97HZfas0p
+   https://asciinema.org/a/8HinOAFUx0MXcS4e97HZfas0
+
+4- Игра Арифметическая прогрессия
+   https://asciinema.org/a/SbFIS40LVV6p0Rd9GIgDB2N2Up
