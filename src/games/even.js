@@ -9,7 +9,7 @@ const isEven = (parity) => parity % 2 === 0;
 const generateRound = () => {
   const question = randomNumber(1, 50);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
-  return [String(question), String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const gameCheckParity = () => {
