@@ -13,3 +13,6 @@
 
 4- Игра Арифметическая прогрессия
    https://asciinema.org/a/SbFIS40LVV6p0Rd9GIgDB2N2Up
+
+5- Игра проверка на простое число
+  https://asciinema.org/a/SRWA1QfeGu6sq0nwbl4coShBE`
