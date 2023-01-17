@@ -10,11 +10,11 @@ const getPlayed = (ruleGame, generateRound) => {
   for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = generateRound();
     console.log('Question: ', question);
-    const answerUser = readlineSync.question('Your answer: ');
-    if (correctAnswer === answerUser) {
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (correctAnswer === userAnswer) {
       console.log('Correct!');
     } else {
-      const wrongAnswer = `'${answerUser}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName} !`;
+      const wrongAnswer = `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName} !`;
       console.log(wrongAnswer);
       return;
     }
