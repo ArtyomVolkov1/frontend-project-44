@@ -9,7 +9,7 @@ const getPlayed = (ruleGame, generateRound) => {
   console.log(ruleGame);
   for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = generateRound();
-    console.log('Question: ', question);
+    console.log('Question:', question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (correctAnswer === userAnswer) {
       console.log('Correct!');
