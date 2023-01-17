@@ -4,7 +4,7 @@ const randomNumber = (min, max) => min + Math.round(Math.random() * (max - min))
 
 const ruleGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (number) => number % 2 === 0;
+const isEven = (parity) => parity % 2 === 0;
 
 const generateRound = () => {
   const question = randomNumber(1, 10);
