@@ -13,7 +13,7 @@ const generateRound = () => {
   while (a % i !== 0 || b % i !== 0) {
     i -= 1;
   }
-  const question = String(`${oneNumber} `) + String(` ${twoNumber}`);
+  const question = `${oneNumber} ${twoNumber}`;
   const correctAnswer = Math.abs(i);
   return [question, String(correctAnswer)];
 };
