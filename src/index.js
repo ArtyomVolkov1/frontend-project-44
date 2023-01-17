@@ -1,13 +1,5 @@
 import readlineSync from 'readline-sync';
 
-/* Случайные числа */
-export const oneRandomNumber = (min, max) => {
-  return min + Math.round(Math.random() * (max - min));
-};
-export const twoRandomNumber = (min, max) => {
-  return min + Math.round(Math.random() * (max - min));
-};
-
 /* Общая логика для всех игр */
 const getPlayed = (ruleGame, generateRound) => {
   console.log('Welcome to the Brain Games!');
@@ -15,7 +7,6 @@ const getPlayed = (ruleGame, generateRound) => {
   const greeting = 'Hello, ' + userName + '!';
   console.log(greeting);
   console.log(ruleGame);
-
   for (let i = 0; i < 3; i += 1) {
     const [question, correctAnswer] = generateRound();
     console.log('Question: ', question);
@@ -27,7 +18,8 @@ const getPlayed = (ruleGame, generateRound) => {
       console.log(wrongAnswer);
       return;
     }
-  }  console.log('Congratulations, ' + userName + '!');
+  }
+  console.log('Congratulations, ' + userName + '!');
 };
 
 export default getPlayed;
