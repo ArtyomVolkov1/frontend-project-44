@@ -20,7 +20,8 @@ $ make install
 ## Games
 
 1- Check  parity.
-    Rules: you need to answer yes if the number is even, or no if it is odd.
+<br>
+Rules: you need to answer yes if the number is even, or no if it is odd.
 <a href="https://asciinema.org/a/553141" target="_blank"><img src="https://asciinema.org/a/553141.svg" /></a>
 2- Игра калькулятор.
 
