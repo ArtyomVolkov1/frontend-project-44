@@ -21,7 +21,7 @@ $ make install
 
 1- Check  parity.
     Rules: you need to answer yes if the number is even, or no if it is odd.
-[![asciicast](https://asciinema.org/a/553141.svg)](https://asciinema.org/a/553141)
+<a href="https://asciinema.org/a/553141" target="_blank"><img src="https://asciinema.org/a/553141.svg" /></a>
 2- Игра калькулятор.
 
 Суть игры в следующем: игроку показывается случайное математическое выражение, например 10 + 5, которое нужно вычислить и записать правильный ответ.
