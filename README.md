@@ -12,14 +12,16 @@ Node.js version 18 or higher
 ## Setup
 
 ```bash
-    make install
+Clone the created project repository locally. 
+Execute the command.
+$ npm link
+$ make install
 ```
+## Games
 
-1 - Игра проверка на четность.
-
-Суть игры в следующем: игроку показывается случайное число. И ему нужно ответить yes, если число чётное, или no — если нечётное:
-
-https://asciinema.org/a/i7dGFndsB21LYvUKW6NolMg6j
+1- Check  parity.
+    Rules: you need to answer yes if the number is even, or no if it is odd.
+<script id="asciicast-WzlWRUV4lqlHWRlPhxsuiupHY" src="https://asciinema.org/a/WzlWRUV4lqlHWRlPhxsuiupHY.js" async></script>
 
 2- Игра калькулятор.
 
