@@ -2,8 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "type": "module",
-  "description": "[![Actions Status](https://github.com/ArtyomVolkov1/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/ArtyomVolkov1/frontend-project-44/actions)",
-  "main": "index.js",
+  "description": "Brain games is a set of five console games",
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
@@ -26,7 +25,6 @@
   },
   "homepage": "https://github.com/ArtyomVolkov1/frontend-project-44#readme",
   "dependencies": {
-    "node": "^19.3.0",
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
