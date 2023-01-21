@@ -1,6 +1,5 @@
-import getPlayed from '../index.js';
-
-const randomNumber = (max) => Math.floor(Math.random() * max);
+import runEngine from '../index.js';
+import { getRandomInRange } from '../utils.js';
 
 const operation = ['-', '+', '*'];
 const mathOperations = (arr) => {
@@ -12,29 +11,29 @@ const ruleGame = 'What is the result of the expression?';
 
 const generateRound = () => {
   let calculMath;
-  const oneNumber = randomNumber(10);
-  const twoNumber = randomNumber(10);
+  const firstValue = getRandomInRange(1, 10);
+  const secondValue = getRandomInRange(1, 10);
   const randomMathOperation = mathOperations(operation);
-  const question = `${oneNumber} ${randomMathOperation} ${twoNumber}`;
+  const question = `${firstValue} ${randomMathOperation} ${secondValue}`;
   switch (randomMathOperation) {
     case '+':
-      calculMath = oneNumber + twoNumber;
+      calculMath = firstValue + secondValue;
       break;
     case '-':
-      calculMath = oneNumber - twoNumber;
+      calculMath = firstValue - secondValue;
       break;
     case '*':
-      calculMath = oneNumber * twoNumber;
+      calculMath = firstValue * secondValue;
       break;
     default:
       return calculMath;
   }
-  const correctAnswer = calculMath;
-  return [question, String(correctAnswer)];
+  const correctAnswer = String(calculMath);
+  return [question, correctAnswer];
 };
 
 const gameCalculator = () => {
-  getPlayed(ruleGame, generateRound);
+  runEngine(ruleGame, generateRound);
 };
 
 export default gameCalculator;
