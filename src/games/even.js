@@ -1,19 +1,19 @@
-import getPlayed from '../index.js';
-
-const randomNumber = (min, max) => min + Math.round(Math.random() * (max - min));
+import runEngine from '../index.js';
+import { getRandomInRange } from '../utils.js';
 
 const ruleGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const isEven = (parity) => parity % 2 === 0;
 
 const generateRound = () => {
-  const question = randomNumber(1, 50);
+  const num = getRandomInRange(1, 50);
+  const question = num;
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
 const gameCheckParity = () => {
-  getPlayed(ruleGame, generateRound);
+  runEngine(ruleGame, generateRound);
 };
 
 export default gameCheckParity;
