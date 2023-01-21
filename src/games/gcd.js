@@ -1,12 +1,11 @@
-import getPlayed from '../index.js';
-
-const randomNumber = (min, max) => min + Math.round(Math.random() * (max - min));
+import runEngine from '../index.js';
+import { getRandomInRange } from '../utils.js';
 
 const ruleGame = 'Find the greatest common divisor of given numbers.';
 
 const generateRound = () => {
-  const oneNumber = randomNumber(1, 20);
-  const twoNumber = randomNumber(0, 20);
+  const oneNumber = getRandomInRange(1, 20);
+  const twoNumber = getRandomInRange(0, 20);
   const a = oneNumber;
   const b = twoNumber;
   let i = a;
@@ -19,7 +18,7 @@ const generateRound = () => {
 };
 
 const gameGcd = () => {
-  getPlayed(ruleGame, generateRound);
+  runEngine(ruleGame, generateRound);
 };
 
 export default gameGcd;
