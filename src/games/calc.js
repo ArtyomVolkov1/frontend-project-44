@@ -1,5 +1,5 @@
 import runEngine from '../index.js';
-import { getRandomInRange } from '../utils.js';
+import getRandomInRange from '../utils.js';
 
 const operation = ['-', '+', '*'];
 const mathOperations = (arr) => {
