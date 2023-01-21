@@ -1,13 +1,12 @@
-import getPlayed from '../index.js';
-
-export const randomNumber = (min, max) => min + Math.round(Math.random() * (max - min));
+import runEngine from '../index.js';
+import { getRandomInRange } from '../utils.js';
 
 const ruleGame = 'What number is missing in the progression?';
 
 const progression = () => {
   const lengthProgression = 10;
-  let numProgression = randomNumber(1, 19);
-  const stepPosition = randomNumber(2, 5);
+  let numProgression = getRandomInRange(1, 19);
+  const stepPosition = getRandomInRange(2, 5);
   const result = [];
   for (let i = 0; i < lengthProgression; i += 1) {
     result.push(numProgression);
@@ -18,7 +17,7 @@ const progression = () => {
 
 const generateRound = () => {
   const progressions = progression();
-  const randomNum = randomNumber(1, 9);
+  const randomNum = getRandomInRange(1, 9);
   const correctAnswer = progressions[randomNum];
   progressions[randomNum] = '..';
   const question = progressions.join(' ');
@@ -26,7 +25,7 @@ const generateRound = () => {
 };
 
 const gameProgression = () => {
-  getPlayed(ruleGame, generateRound);
+  runEngine(ruleGame, generateRound);
 };
 
 export default gameProgression;
