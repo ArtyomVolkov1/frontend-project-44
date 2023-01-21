@@ -1,6 +1,5 @@
-import getPlayed from '../index.js';
-
-const randomNumber = (min, max) => min + Math.round(Math.random() * (max - min));
+import runEngine from '../index.js';
+import { getRandomInRange } from '../utils.js';
 
 const ruleGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -14,13 +13,13 @@ const isPrime = (number) => {
 };
 
 const generateRound = () => {
-  const question = randomNumber(2, 100);
+  const question = getRandomInRange(2, 100);
   const correctAnswer = isPrime(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
 const gameCheckPrime = () => {
-  getPlayed(ruleGame, generateRound);
+  runEngine(ruleGame, generateRound);
 };
 
 export default gameCheckPrime;
