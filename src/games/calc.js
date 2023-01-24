@@ -3,7 +3,7 @@ import getRandomInRange from '../utils.js';
 
 const getRandomOperator = () => {
   const operators = ['-', '+', '*'];
-  return operators[getRandomInRange(0, operators.length)];
+  return operators[getRandomInRange(0, 2)];
 };
 
 const ruleGame = 'What is the result of the expression?';
@@ -17,7 +17,7 @@ const calculation = (num1, num2, operator) => {
     case '*':
       return num1 * num2;
     default:
-      throw Error(`Operator ${operator} - is incorrect`);
+      throw new Error(`Operator ${operator} - is incorrect`);
   }
 };
 const generateRound = () => {
