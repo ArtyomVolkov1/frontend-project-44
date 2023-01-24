@@ -3,17 +3,17 @@ import getRandomInRange from '../utils.js';
 
 const ruleGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const isEven = (parity) => parity % 2 === 0;
+const checkNumberIsEven = (parity) => parity % 2 === 0;
 
 const generateRound = () => {
   const num = getRandomInRange(1, 50);
   const question = num;
-  const correctAnswer = isEven(question) ? 'yes' : 'no';
+  const correctAnswer = checkNumberIsEven(question) ? 'yes' : 'no';
   return [question, correctAnswer];
 };
 
-const gameCheckParity = () => {
+const isEvenGame = () => {
   runEngine(ruleGame, generateRound);
 };
 
-export default gameCheckParity;
+export default isEvenGame;
