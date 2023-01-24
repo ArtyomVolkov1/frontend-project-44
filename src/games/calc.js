@@ -1,39 +1,36 @@
 import runEngine from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const operation = ['-', '+', '*'];
-const mathOperations = (arr) => {
-  const math = [Math.floor(Math.random() * arr.length)];
-  return arr[math];
+const getRandomOperator = () => {
+  const operators = ['-', '+', '*'];
+  return operators[getRandomInRange(0, operators.length)];
 };
 
 const ruleGame = 'What is the result of the expression?';
 
+const calculation = (num1, num2, operator) => {
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    default:
+      throw Error(`Operator ${operator} - is incorrect`);
+  }
+};
 const generateRound = () => {
-  let calculMath;
   const firstValue = getRandomInRange(1, 10);
   const secondValue = getRandomInRange(1, 10);
-  const randomMathOperation = mathOperations(operation);
+  const randomMathOperation = getRandomOperator();
   const question = `${firstValue} ${randomMathOperation} ${secondValue}`;
-  switch (randomMathOperation) {
-    case '+':
-      calculMath = firstValue + secondValue;
-      break;
-    case '-':
-      calculMath = firstValue - secondValue;
-      break;
-    case '*':
-      calculMath = firstValue * secondValue;
-      break;
-    default:
-      return calculMath;
-  }
-  const correctAnswer = String(calculMath);
-  return [question, correctAnswer];
+  const correctAnswer = calculation(firstValue, secondValue, randomMathOperation);
+  return [question, String(correctAnswer)];
 };
 
-const gameCalculator = () => {
+const runCalculatorGame = () => {
   runEngine(ruleGame, generateRound);
 };
 
-export default gameCalculator;
+export default runCalculatorGame;
