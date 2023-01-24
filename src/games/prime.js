@@ -18,8 +18,8 @@ const generateRound = () => {
   return [question, correctAnswer];
 };
 
-const gameCheckPrime = () => {
+const isPrimeGame = () => {
   runEngine(ruleGame, generateRound);
 };
 
-export default gameCheckPrime;
+export default isPrimeGame;
