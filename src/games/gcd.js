@@ -3,22 +3,23 @@ import getRandomInRange from '../utils.js';
 
 const ruleGame = 'Find the greatest common divisor of given numbers.';
 
+const getGcd = (num1, num2) => {
+  if (num1 === 0) {
+    return num2;
+  }
+  return getGcd(num2 % num1, num1);
+};
+
 const generateRound = () => {
   const oneNumber = getRandomInRange(1, 20);
   const twoNumber = getRandomInRange(0, 20);
-  const a = oneNumber;
-  const b = twoNumber;
-  let i = a;
-  while (a % i !== 0 || b % i !== 0) {
-    i -= 1;
-  }
   const question = `${oneNumber} ${twoNumber}`;
-  const correctAnswer = Math.abs(i);
+  const correctAnswer = getGcd(oneNumber, twoNumber);
   return [question, String(correctAnswer)];
 };
 
-const gameGcd = () => {
+const runGcdGame = () => {
   runEngine(ruleGame, generateRound);
 };
 
-export default gameGcd;
+export default runGcdGame;
