@@ -3,29 +3,30 @@ import getRandomInRange from '../utils.js';
 
 const ruleGame = 'What number is missing in the progression?';
 
-const progression = () => {
-  const lengthProgression = 10;
-  let numProgression = getRandomInRange(1, 19);
-  const stepPosition = getRandomInRange(2, 5);
-  const result = [];
-  for (let i = 0; i < lengthProgression; i += 1) {
-    result.push(numProgression);
-    numProgression += stepPosition;
+const generateProgression = (num, step, length) => {
+  const progression = [];
+  let memberProgression = num;
+  for (let i = 0; i < length; i += 1) {
+    progression.push(memberProgression);
+    memberProgression += step;
   }
-  return result;
+  return progression;
 };
 
 const generateRound = () => {
-  const progressions = progression();
-  const randomNum = getRandomInRange(1, 9);
-  const correctAnswer = progressions[randomNum];
-  progressions[randomNum] = '..';
-  const question = progressions.join(' ');
+  const memberProgression = getRandomInRange(1, 19);
+  const stepProgression = getRandomInRange(2, 5);
+  const lengthProgression = 10;
+  const progression = generateProgression(memberProgression, stepProgression, lengthProgression);
+  const getRandomIndex = getRandomInRange(1, 9);
+  const correctAnswer = progression[getRandomIndex];
+  progression[getRandomIndex] = '..';
+  const question = progression.join(' ');
   return [question, String(correctAnswer)];
 };
 
-const gameProgression = () => {
+const runProgressionGame = () => {
   runEngine(ruleGame, generateRound);
 };
 
-export default gameProgression;
+export default runProgressionGame;
