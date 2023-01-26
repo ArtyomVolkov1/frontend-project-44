@@ -12,8 +12,8 @@ const generateRound = () => {
   return [question, correctAnswer];
 };
 
-const isEvenGame = () => {
+const runIsEvenGame = () => {
   runEngine(ruleGame, generateRound);
 };
 
-export default isEvenGame;
+export default runIsEvenGame;

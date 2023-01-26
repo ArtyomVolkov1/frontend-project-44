@@ -14,8 +14,8 @@ const generateRound = () => {
   const oneNumber = getRandomInRange(1, 20);
   const twoNumber = getRandomInRange(0, 20);
   const question = `${oneNumber} ${twoNumber}`;
-  const correctAnswer = getGcd(oneNumber, twoNumber);
-  return [question, String(correctAnswer)];
+  const correctAnswer = getGcd(oneNumber, twoNumber).toString();
+  return [question, correctAnswer];
 };
 
 const runGcdGame = () => {
