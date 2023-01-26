@@ -19,10 +19,10 @@ const generateRound = () => {
   const lengthProgression = 10;
   const progression = generateProgression(memberProgression, stepProgression, lengthProgression);
   const getRandomIndex = getRandomInRange(1, 9);
-  const correctAnswer = progression[getRandomIndex];
+  const correctAnswer = progression[getRandomIndex].toString();
   progression[getRandomIndex] = '..';
   const question = progression.join(' ');
-  return [question, String(correctAnswer)];
+  return [question, correctAnswer];
 };
 
 const runProgressionGame = () => {

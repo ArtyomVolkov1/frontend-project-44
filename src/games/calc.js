@@ -25,8 +25,8 @@ const generateRound = () => {
   const secondValue = getRandomInRange(1, 10);
   const randomMathOperation = getRandomOperator();
   const question = `${firstValue} ${randomMathOperation} ${secondValue}`;
-  const correctAnswer = calculation(firstValue, secondValue, randomMathOperation);
-  return [question, String(correctAnswer)];
+  const correctAnswer = calculation(firstValue, secondValue, randomMathOperation).toString();
+  return [question, correctAnswer];
 };
 
 const runCalculatorGame = () => {
